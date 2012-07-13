@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description  = "Rubygem to use UploadCare.com service and serve file uploads in your Rails projects."
   s.authors      = ["Alexander Zinchenko"]
   s.email        = 'az@uploadcare.com'
-  s.files        = Dir['lib/**/*.rb'] << 'init.rb'
+  s.files        = (Dir['lib/**/*.rb'] + Dir['vendor/**/*']) << 'init.rb'
   s.require_paths = ['lib']
   s.homepage     = 'http://github.com/uploadcare/uploadcare-rails'
 

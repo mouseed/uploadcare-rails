@@ -17,5 +17,8 @@ module Uploadcare::Rails::Inject
   def self.try_inject
     ActiveRecord::Base.send(:include, Uploadcare::Rails::ActiveRecord) if defined? ActiveRecord
     ActionView::Helpers::FormBuilder.send(:include, Uploadcare::Rails::FormBuilder) if defined? ActionView
+    if defined? SimpleForm::Inputs
+      require 'uploadcare-rails/simple_form'
+    end
   end
 end
