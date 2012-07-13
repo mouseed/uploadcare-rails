@@ -56,11 +56,11 @@ end
 * Put a form helper into your views:
 
 ```erb
-<%- form_for(@order) do |f| %>
+<%= form_for(@order) do |f| %>
   ...
   <%= f.uploadcare_field :file %>
   ...
-<%- end %>
+<% end %>
 ```
 
 * Require a widget library in your `application.js` file:
@@ -130,6 +130,19 @@ record.upload.size
 record.upload.image?
 record.upload.removed?
 record.upload.keep # to force keep or to keep it manually with delayed_job etc.
+```
+
+## Integration with other libraries
+
+### SimpleForm
+
+Uploadcare gem simply integrates into SimpleForm with custom builder:
+
+```erb
+<%= simple_form_for @post do |f| %>
+  <%= f.input :upload, :as => :uploadcare %>
+  ...
+<% end %>
 ```
 
 ## Roadmap
